@@ -1,6 +1,7 @@
 # Leak report
 
-_Use this document to describe whatever memory leaks
-you find in `clean_whitespace.c` and how you might fix
-them. You should also probably remove this explanatory
-text._
+_`clean_whitespace.c` has one memory leak, specifcally
+at line 41 in `strip()`. This then is never freed,
+creating a memory leak. This is fixed simply by calling
+`free()` on line 49. This call to `free()` frees the
+memory allocated by the `strip()` function._
